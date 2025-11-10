@@ -5,23 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ServeUp Boost | Restaurant Growth Kit</title>
   <style>
-    body {margin:0;font-family:'Poppins',sans-serif;background:#fff;color:#222;}
-    header {background:#ff6b35;color:white;text-align:center;padding:3rem 1rem;}
-    header h1 {margin:0;font-size:2.2rem;}
-    header p {margin-top:.5rem;font-size:1.1rem;}
-    section {padding:2rem 1rem;max-width:900px;margin:auto;}
-    .features {display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;}
-    .feature {background:#f9f9f9;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,0.05);}
-    .feature h3 {color:#ff6b35;margin-bottom:.5rem;}
-    .plans {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
-    .plan {border:2px solid #ff6b35;border-radius:14px;padding:1.5rem;text-align:center;background:white;box-shadow:0 4px 10px rgba(0,0,0,0.05);}
-    .plan h2 {color:#ff6b35;margin-bottom:.5rem;}
-    .price {font-size:1.6rem;margin:.5rem 0;font-weight:600;}
-    .btn {background:#ff6b35;color:white;padding:.8rem 1.5rem;border:none;border-radius:30px;cursor:pointer;text-decoration:none;display:inline-block;margin-top:1rem;}
-    .btn:hover {background:#e85a2f;}
-    footer {text-align:center;background:#222;color:white;padding:1.5rem 1rem;margin-top:2rem;}
-    @media(max-width:600px){
-      .features{grid-template-columns:1fr;}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #f1f1f1;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #ff7a1f;
+      text-shadow: 0 0 10px rgba(255, 122, 31, 0.5);
+    }
+    header p {
+      color: #ccc;
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    section {
+      padding: 2.5rem 1rem;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff7a1f;
+      font-size: 1.8rem;
+      text-shadow: 0 0 8px rgba(255, 122, 31, 0.4);
+    }
+
+    .features, .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature, .plan {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 122, 31, 0.05);
+      transition: 0.3s;
+    }
+
+    .feature:hover, .plan:hover {
+      box-shadow: 0 0 15px rgba(255, 122, 31, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .feature h3, .plan h2 {
+      color: #ff7a1f;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 1.7rem;
+      color: #fff;
+      margin: 0.5rem 0;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      color: #ccc;
+      font-size: 0.9rem;
+      line-height: 1.6rem;
+    }
+
+    .btn {
+      background: #ff7a1f;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(255, 122, 31, 0.5);
+    }
+
+    .btn:hover {
+      background: #ffa347;
+      box-shadow: 0 0 15px rgba(255, 122, 31, 0.8);
+      transform: scale(1.05);
+    }
+
+    /* DEMO FORM */
+    .demo-form {
+      background: #1a1a1a;
+      padding: 2rem 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(255, 122, 31, 0.15);
+      max-width: 550px;
+      margin: 2rem auto;
+    }
+
+    .demo-form label {
+      display: block;
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .demo-form input, .demo-form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: none;
+      margin-top: 0.3rem;
+      background: #111;
+      color: #eee;
+    }
+
+    .demo-form textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    footer {
+      text-align: center;
+      background: #1a1a1a;
+      color: #999;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+      border-top: 1px solid #333;
     }
   </style>
 </head>
@@ -29,73 +150,112 @@
 
 <header>
   <h1>ServeUp Boost</h1>
-  <p>Grow your restaurant or café with smart online tools — no coding, no hassle.</p>
-  <a class="btn" href="https://wa.me/919605129269" target="_blank">Chat on WhatsApp</a>
+  <p>Grow your restaurant or café with modern online tools — fast, simple, and effective.</p>
+  <a class="btn" href="https://wa.me/919605129269" target="_blank">💬 Chat on WhatsApp</a>
 </header>
 
 <section>
-  <h2 style="text-align:center;">Why Choose ServeUp Boost?</h2>
+  <h2>Why Choose ServeUp Boost?</h2>
   <div class="features">
     <div class="feature">
       <h3>⚡ Fast Setup</h3>
-      <p>Get your digital menu + ordering system live within 24 hours.</p>
+      <p>Launch your digital menu + WhatsApp ordering within 24 hours.</p>
     </div>
     <div class="feature">
       <h3>💬 WhatsApp Orders</h3>
-      <p>Let customers order directly via WhatsApp — simple and familiar.</p>
+      <p>Let your customers place orders directly on WhatsApp — no app needed.</p>
     </div>
     <div class="feature">
-      <h3>📈 Boost Sales</h3>
-      <p>Attract more customers with easy ordering and instant feedback.</p>
+      <h3>📈 More Customers</h3>
+      <p>Reach more people online and boost repeat orders effortlessly.</p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2 style="text-align:center;">Plans & Pricing</h2>
+  <h2>Plans & Pricing</h2>
   <div class="plans">
     <div class="plan">
       <h2>Starter</h2>
       <p>Perfect for small cafés or takeaways</p>
       <div class="price">₹499</div>
-      <ul style="list-style:none;padding:0;">
+      <ul>
         <li>✅ WhatsApp Ordering Setup</li>
         <li>✅ Digital Menu Link</li>
         <li>✅ Basic Support</li>
       </ul>
-      <a class="btn" href="https://wa.me/919605129269?text=Hi%2C+I+want+the+Starter+Plan" target="_blank">Get Started</a>
+      <a class="btn" href="https://wa.me/919605129269?text=Hi%2C+I+want+the+Starter+Plan" target="_blank">Get Starter Plan</a>
     </div>
 
     <div class="plan">
       <h2>Growth</h2>
-      <p>For restaurants ready to scale online</p>
+      <p>For restaurants ready to grow online</p>
       <div class="price">₹999</div>
-      <ul style="list-style:none;padding:0;">
+      <ul>
         <li>✅ Website + WhatsApp Integration</li>
         <li>✅ Customer Feedback Form</li>
         <li>✅ Priority Setup (24 hrs)</li>
       </ul>
-      <a class="btn" href="https://wa.me/919605129269?text=Hi%2C+I+want+the+Growth+Plan" target="_blank">Choose Growth</a>
+      <a class="btn" href="https://wa.me/919605129269?text=Hi%2C+I+want+the+Growth+Plan" target="_blank">Choose Growth Plan</a>
     </div>
 
     <div class="plan">
       <h2>Pro</h2>
-      <p>Best for top restaurants and chains</p>
+      <p>For premium restaurants and chains</p>
       <div class="price">₹1499</div>
-      <ul style="list-style:none;padding:0;">
+      <ul>
         <li>✅ All Growth Features</li>
         <li>✅ Instagram Setup Help</li>
-        <li>✅ 24/7 Priority Support</li>
+        <li>✅ 24/7 Support</li>
       </ul>
       <a class="btn" href="https://wa.me/919605129269?text=Hi%2C+I+want+the+Pro+Plan" target="_blank">Go Pro</a>
     </div>
   </div>
 </section>
 
+<section>
+  <h2>Request a Free Demo</h2>
+  <form class="demo-form" onsubmit="sendToWhatsApp(event)">
+    <label>Restaurant / Café Name</label>
+    <input type="text" id="name" placeholder="e.g., BrewHouse Café" required />
+
+    <label>Owner Name</label>
+    <input type="text" id="owner" placeholder="Your name" required />
+
+    <label>WhatsApp Number</label>
+    <input type="text" id="phone" placeholder="+91XXXXXXXXXX" required />
+
+    <label>Location</label>
+    <input type="text" id="location" placeholder="City / Town" required />
+
+    <label>Message / Menu Link</label>
+    <textarea id="message" placeholder="Share your menu link or any details..."></textarea>
+
+    <button type="submit" class="btn">🚀 Request Demo</button>
+  </form>
+</section>
+
 <footer>
-  <p>© 2025 ServeUp Boost – Built to empower local restaurants & cafés.</p>
-  <a class="btn" href="https://wa.me/919605129269" target="_blank">Chat Now</a>
+  <p>© 2025 ServeUp Boost — Empowering local restaurants & cafés.</p>
+  <a class="btn" href="https://wa.me/919605129269" target="_blank">💬 Chat Now</a>
 </footer>
+
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault();
+  const name = document.getElementById("name").value;
+  const owner = document.getElementById("owner").value;
+  const phone = document.getElementById("phone").value;
+  const location = document.getElementById("location").value;
+  const message = document.getElementById("message").value;
+
+  const text = `🍽️ *Demo Request - ServeUp Boost*%0A
+🏠 Restaurant: ${name}%0A👤 Owner: ${owner}%0A📞 WhatsApp: ${phone}%0A📍 Location: ${location}%0A📝 Message: ${message}`;
+
+  const url = `https://wa.me/919605129269?text=${encodeURIComponent(text)}`;
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
