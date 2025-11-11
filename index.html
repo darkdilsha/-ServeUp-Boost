@@ -3,114 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ServeUp Boost | Restaurant Growth Kit</title>
+  <title>ServeUp Boost | Restaurant Growth System</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
-      color: #f1f1f1;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1555992336-cbfca4b6d9b3?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color: #f4f4f4;
     }
-
     header {
       text-align: center;
-      padding: 4rem 1rem 3rem;
-      background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+      padding: 60px 20px;
+      color: gold;
+      animation: fadeInDown 1s ease;
     }
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #ff7a1f;
-      text-shadow: 0 0 10px rgba(255, 122, 31, 0.5);
+      font-size: 3rem;
+      letter-spacing: 2px;
     }
     header p {
-      color: #ccc;
-      margin-top: 0.8rem;
-      font-size: 1.1rem;
+      color: #ddd;
+      margin-top: 10px;
+      font-size: 1.2rem;
     }
-
     section {
-      padding: 2.5rem 1rem;
-      max-width: 950px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255,215,0,0.2);
+      animation: fadeInUp 1.5s ease;
     }
-
     h2 {
+      color: gold;
       text-align: center;
-      color: #ff7a1f;
-      font-size: 1.8rem;
-      text-shadow: 0 0 8px rgba(255, 122, 31, 0.4);
+      margin-bottom: 20px;
     }
-
-    .features, .plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .feature, .plan {
-      background: #1a1a1a;
-      border-radius: 12px;
-      padding: 1.5rem;
+    p {
       text-align: center;
-      box-shadow: 0 0 15px rgba(255, 122, 31, 0.05);
-      transition: 0.3s;
+      line-height: 1.6;
     }
-
-    .feature:hover, .plan:hover {
-      box-shadow: 0 0 15px rgba(255, 122, 31, 0.3);
-      transform: translateY(-5px);
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
     }
-
-    .feature h3, .plan h2 {
-      color: #ff7a1f;
-      margin-bottom: 0.5rem;
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255,215,0,0.3);
+      text-align: center;
     }
-
-    .price {
-      font-size: 1.7rem;
-      color: #fff;
-      margin: 0.5rem 0;
-      font-weight: 600;
+    th {
+      color: gold;
+      font-size: 1.2rem;
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      color: #ccc;
-      font-size: 0.9rem;
-      line-height: 1.6rem;
-    }
-
     .btn {
-      background: #ff7a1f;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      text-decoration: none;
       display: inline-block;
-      margin-top: 1rem;
+      background: gold;
+      color: black;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
       transition: 0.3s;
-      box-shadow: 0 0 10px rgba(255, 122, 31, 0.5);
     }
-
     .btn:hover {
-      background: #ffa347;
-      box-shadow: 0 0 15px rgba(255, 122, 31, 0.8);
+      background: #e5c100;
       transform: scale(1.05);
     }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform:translateY(30px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity:0; transform:translateY(-30px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+    @media (max-width:600px){
+      header h1 {font-size:2.2rem;}
+      section {margin:30px 10px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍽️ ServeUp Boost</h1>
+    <p>Grow Your Restaurant Online — Instantly!</p>
+  </header>
 
-    /* DEMO FORM */
-    .demo-form {
-      background: #1a1a1a;
-      padding: 2rem 1.5rem;
-      border-radius: 14px;
-      box-shadow: 0 0 25px rgba(255, 122, 31, 0.15);
-      max-width: 550px;
+  <section id="about">
+    <h2>Why Choose ServeUp Boost?</h2>
+    <p>ServeUp Boost helps cafés and restaurants get more orders, more reviews, and more returning customers — all with an automated website and WhatsApp system that runs 24/7.</p>
+  </section>
+
+  <section id="featured">
+    <h2>🏆 Featured Client</h2>
+    <p><strong>Cardamom Kerala Restaurant</strong><br>
+      “From walk-ins to online orders — ServeUp Boost helped this restaurant double their weekend traffic in just 10 days.”<br>
+      📍 Condolium, Goa · 🍛 Authentic Kerala food
+    </p>
+  </section>
+
+  <section id="pricing">
+    <h2>💰 Pricing Plans</h2>
+    <table>
+      <tr>
+        <th>Plan</th>
+        <th>Features</th>
+        <th>Price (₹)</th>
+      </tr>
+      <tr>
+        <td><b>Starter</b></td>
+        <td>1-page landing site, WhatsApp connect</td>
+        <td>499</td>
+      </tr>
+      <tr>
+        <td><b>Growth</b></td>
+        <td>Menu page, gallery, basic SEO</td>
+        <td>799</td>
+      </tr>
+      <tr>
+        <td><b>Pro</b></td>
+        <td>Full booking + analytics dashboard</td>
+        <td>1200</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="cta" style="text-align:center;">
+    <h2>Ready to Boost Your Restaurant?</h2>
+    <p>See a live demo today — pay only if you love it.</p>
+    <a class="btn" href="https://wa.me/91XXXXXXXXXX?text=I%20want%20a%20demo%20for%20ServeUp%20Boost" target="_blank">💬 Chat on WhatsApp</a>
+  </section>
+
+  <footer>
+    © 2025 ServeUp Boost — Restaurant Growth System
+  </footer>
+</body>
+</html>      max-width: 550px;
       margin: 2rem auto;
     }
 
