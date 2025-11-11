@@ -1,417 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ServeUp Boost — Restaurant Growth Kit</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-    :root{
-      --gold:#ffb84d;
-      --gold-strong:#ff9f1a;
-      --muted:#cfc7bf;
-      --panel: rgba(8,8,8,0.6);
-      --glass: rgba(255,215,0,0.04);
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    html,body{height:100%}
-    body{
-      min-height:100%;
-      color:#f4f3f2;
-      background:
-        linear-gradient(180deg, rgba(8,8,8,0.64), rgba(8,8,8,0.72)),
-        url('https://images.unsplash.com/photo-1555992336-cbfca4b6d9b3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      padding-bottom:40px;
-    }
-
-    .wrap{max-width:1100px;margin:30px auto;padding:18px;}
-
-    /* Header / Logo */
-    .top {
-      text-align:center;
-      padding:28px 10px 8px;
-      animation:fadeInDown .9s ease both;
-    }
-    .logo {
-      display:inline-block;
-      width:160px;
-      height:auto;
-      border-radius:10px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      padding:8px;
-      box-shadow:0 6px 22px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.02);
-    }
-    .hero-title{
-      margin-top:14px;
-      font-size:2.4rem;
-      color:var(--gold);
-      letter-spacing:1px;
-      text-shadow:0 6px 18px rgba(255,159,26,0.12);
-    }
-    .hero-sub{
-      color:var(--muted);
-      margin-top:8px;
-      font-size:1.05rem;
-    }
-
-    /* Panels */
-    .panel {
-      background:var(--panel);
-      border-radius:14px;
-      padding:22px;
-      margin:30px 0;
-      box-shadow:0 10px 30px rgba(0,0,0,0.5);
-      border:1px solid rgba(255,215,0,0.07);
-      backdrop-filter: blur(6px);
-      animation:fadeInUp 1s ease both;
-    }
-
-    h2 {color:var(--gold-strong);font-size:1.4rem;margin-bottom:10px;text-shadow:0 6px 20px rgba(255,159,26,0.08)}
-    p.lead{color:var(--muted);font-size:1rem;margin-top:6px}
-
-    /* Features grid */
-    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
-    .feature {padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));}
-    .feature h3{color:var(--gold-strong);font-size:1.05rem;margin-bottom:6px}
-    .feature p{color:var(--muted);font-size:0.95rem}
-
-    /* Featured client */
-    .featured {display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    .featured .thumb{flex:0 0 160px;height:110px;border-radius:10px;background:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=60') center/cover no-repeat;border:1px solid rgba(255,215,0,0.06)}
-    .featured .meta{flex:1}
-
-    .meta strong{display:block;color:var(--gold-strong);font-size:1.05rem}
-    .meta small{color:var(--muted);display:block;margin-top:6px}
-
-    /* Pricing */
-    .plans {display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:16px}
-    .plan {
-      padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,215,0,0.02), rgba(255,215,0,0.01));
-      border:1px solid rgba(255,215,0,0.06);
-    }
-    .plan h3{color:var(--gold);margin-bottom:8px}
-    .price {font-weight:700;color:#fff;font-size:1.3rem;margin:6px 0}
-    .plan ul{color:var(--muted);list-style:none;padding-left:0;margin-top:8px}
-    .plan li{padding:6px 0;font-size:0.95rem}
-
-    .cta {text-align:center;margin-top:18px}
-    .btn {
-      display:inline-block;padding:12px 26px;border-radius:30px;background:linear-gradient(90deg,var(--gold),var(--gold-strong));
-      color:#111;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(255,159,26,0.12);transition:transform .18s ease,box-shadow .18s ease;
-    }
-    .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(255,159,26,0.18)}
-
-    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:0.9rem}
-
-    /* Animations */
-    @keyframes fadeInUp {from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-    @keyframes fadeInDown {from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
-
-    /* Responsive tweaks */
-    @media (max-width:720px){
-      .hero-title{font-size:1.8rem}
-      .wrap{padding:12px}
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ServeUp Boost</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="wrap">
-    <div class="top">
-      <!-- Logo: ensure your file Serverup_logo.png is next to this HTML or update path -->
-      <img class="logo" src="Serverup_logo.png" alt="ServeUp Boost logo" onerror="this.style.display='none'">
-      <div class="hero-title">ServeUp Boost</div>
-      <div class="hero-sub">Grow your restaurant with a curated website + WhatsApp system — fast and simple.</div>
+  <header class="hero">
+    <img src="serverup_logo.png" alt="ServeUp Boost Logo" class="logo" />
+    <h1>ServeUp Boost</h1>
+    <p>Grow your restaurant with a curated website + WhatsApp system — fast and simple.</p>
+  </header>
+
+  <section class="why">
+    <h2>Why Choose ServeUp Boost?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>⚡ Rapid Setup</h3>
+        <p>Go live within 24–48 hours with a working menu and WhatsApp ordering.</p>
+      </div>
+      <div class="feature">
+        <h3>💬 WhatsApp First</h3>
+        <p>Customers place orders directly via WhatsApp — no apps required.</p>
+      </div>
+      <div class="feature">
+        <h3>📈 Revenue Focused</h3>
+        <p>Campaigns designed to convert visitors into orders and repeat customers.</p>
+      </div>
     </div>
-
-    <section class="panel" id="about">
-      <h2>Why ServeUp Boost?</h2>
-      <p class="lead">We build a sleek promo page + WhatsApp ordering flow that helps local cafés and restaurants get more orders, bookings and repeat customers — without paid ads or complex tech.</p>
-
-      <div class="features" style="margin-top:18px;">
-        <div class="feature">
-          <h3>⚡ Rapid Setup</h3>
-          <p>Go live within 24–48 hours with a working menu and WhatsApp ordering.</p>
-        </div>
-        <div class="feature">
-          <h3>💬 WhatsApp First</h3>
-          <p>Customers place orders directly via WhatsApp — no extra apps required.</p>
-        </div>
-        <div class="feature">
-          <h3>📈 Revenue Focused</h3>
-          <p>Campaigns designed to convert visitors into diners and repeat customers.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="featured">
-      <h2>🏆 Featured Client</h2>
-      <div class="featured">
-        <div class="thumb" aria-hidden="true"></div>
-        <div class="meta">
-          <strong>Cardamom Kerala Restaurant</strong>
-          <small>“From walk-ins to online orders — ServeUp Boost helped Cardamom Kerala Restaurant double their weekend traffic in just 10 days.”</small>
-          <small style="margin-top:8px; display:block">Condolium, Goa · Authentic Kerala food</small>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="pricing">
-      <h2>💰 Pricing Plans</h2>
-      <div class="plans">
-        <div class="plan">
-          <h3>Starter</h3>
-          <div class="price">₹ 499</div>
-          <ul>
-            <li>One-page landing + WhatsApp connect</li>
-            <li>Digital menu link</li>
-            <li>Basic setup support</li>
-          </ul>
-        </div>
-
-        <div class="plan">
-          <h3>Growth</h3>
-          <div class="price">₹ 799</div>
-          <ul>
-            <li>Menu page + gallery</li>
-            <li>Customer feedback form</li>
-            <li>Priority setup (24 hrs)</li>
-          </ul>
-        </div>
-
-        <div class="plan">
-          <h3>Pro</h3>
-          <div class="price">₹ 1,200</div>
-          <ul>
-            <li>All Growth features</li>
-            <li>Booking & basic analytics</li>
-            <li>24/7 priority support</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cta">
-        <p style="color:var(--muted);margin-bottom:12px">Request a demo — preview your page, pay only if you like it.</p>
-        <!-- Replace 91XXXXXXXXXX with your full phone number (country code + digits) -->
-        <a class="btn" href="https://wa.me/91XXXXXXXXXX?text=🍽️%20Demo%20Request%20-%20ServeUp%20Boost%0A🏠%20Restaurant:%20Cardamom%20Kerala%20Restaurant%20%0A👤%20Owner:%20Jojest%0A📞%20WhatsApp:%20+91%2078754%2050365%0A📍%20Location:%20Condolium,%20Goa%0A📝%20Message:%20Good%20Kerala%20food" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
-      </div>
-    </section>
-
-    <footer>
-      © 2025 ServeUp Boost — Built for local restaurants & cafés
-    </footer>
-  </div>
-
-  <!-- Optional small script: fade in panels as they come into view -->
-  <script>
-    (function(){
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) e.target.style.opacity = 1;
-        });
-      }, {threshold:0.12});
-
-      document.querySelectorAll('.panel').forEach(s => {
-        s.style.opacity = 0;
-        s.style.transform = 'translateY(14px)';
-        s.style.transition = 'opacity .7s ease, transform .7s ease';
-        observer.observe(s);
-        s.addEventListener('transitionend', () => { s.style.transform = ''; });
-      });
-    })();
-  </script>
-</body>
-</html>      “From walk-ins to online orders — ServeUp Boost helped this restaurant double their weekend traffic in just 10 days.”<br>
-      📍 Condolium, Goa · 🍛 Authentic Kerala food
-    </p>
   </section>
 
-  <section id="pricing">
+  <section class="client">
+    <h2>⭐ Featured Client</h2>
+    <div class="client-card">
+      <img src="restaurant_sample.jpg" alt="Cardamom Kerala Restaurant" />
+      <div class="client-info">
+        <h3>Cardamom Kerala Restaurant</h3>
+        <p>“From walk-ins to online orders — ServeUp Boost helped Cardamom Kerala Restaurant double their weekend traffic in just 10 days.”</p>
+        <p><b>📍 Condolim, Goa</b> — Authentic Kerala food</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing">
     <h2>💰 Pricing Plans</h2>
-    <table>
-      <tr>
-        <th>Plan</th>
-        <th>Features</th>
-        <th>Price (₹)</th>
-      </tr>
-      <tr>
-        <td><b>Starter</b></td>
-        <td>1-page landing site, WhatsApp connect</td>
-        <td>499</td>
-      </tr>
-      <tr>
-        <td><b>Growth</b></td>
-        <td>Menu page, gallery, basic SEO</td>
-        <td>799</td>
-      </tr>
-      <tr>
-        <td><b>Pro</b></td>
-        <td>Full booking + analytics dashboard</td>
-        <td>1200</td>
-      </tr>
-    </table>
+    <div class="plans">
+      <div class="plan">
+        <h3>Starter</h3>
+        <p class="price">₹499</p>
+        <ul>
+          <li>One-page landing + WhatsApp connect</li>
+          <li>Digital menu link</li>
+          <li>Basic setup support</li>
+        </ul>
+        <button class="btn">Get Starter Plan</button>
+      </div>
+
+      <div class="plan">
+        <h3>Growth</h3>
+        <p class="price">₹799</p>
+        <ul>
+          <li>Menu page + gallery</li>
+          <li>Customer feedback form</li>
+          <li>Priority setup (24 hrs)</li>
+        </ul>
+        <button class="btn">Choose Growth Plan</button>
+      </div>
+
+      <div class="plan">
+        <h3>Pro</h3>
+        <p class="price">₹1200</p>
+        <ul>
+          <li>All Growth features</li>
+          <li>Booking & basic analytics</li>
+          <li>24/7 priority support</li>
+        </ul>
+        <button class="btn">Go Pro</button>
+      </div>
+    </div>
   </section>
 
-  <section id="cta" style="text-align:center;">
-    <h2>Ready to Boost Your Restaurant?</h2>
-    <p>See a live demo today — pay only if you love it.</p>
-    <a class="btn" href="https://wa.me/918593071292?text=I%20want%20a%20demo%20for%20ServeUp%20Boost" target="_blank">💬 Chat on WhatsApp</a>
+  <section class="demo">
+    <h2>Request a Free Demo</h2>
+    <form>
+      <input type="text" placeholder="Restaurant Name" required />
+      <input type="text" placeholder="Owner Name" required />
+      <input type="text" placeholder="City / Town" required />
+      <input type="text" placeholder="WhatsApp Number" required />
+      <input type="text" placeholder="Message / Menu Link" />
+      <button type="submit" class="btn">Request Demo</button>
+    </form>
   </section>
 
   <footer>
-    © 2025 ServeUp Boost — Restaurant Growth System
+    <p>© 2025 ServeUp Boost — Empowering local restaurants & cafés.</p>
+    <button class="btn">Chat on WhatsApp</button>
   </footer>
-</body>
-</html>      max-width: 550px;
-      margin: 2rem auto;
-    }
-
-    .demo-form label {
-      display: block;
-      color: #ccc;
-      font-size: 0.9rem;
-      margin-top: 0.8rem;
-    }
-
-    .demo-form input, .demo-form textarea {
-      width: 100%;
-      padding: 0.7rem;
-      border-radius: 8px;
-      border: none;
-      margin-top: 0.3rem;
-      background: #111;
-      color: #eee;
-    }
-
-    .demo-form textarea {
-      resize: none;
-      height: 80px;
-    }
-
-    footer {
-      text-align: center;
-      background: #1a1a1a;
-      color: #999;
-      padding: 1.5rem 1rem;
-      margin-top: 2rem;
-      border-top: 1px solid #333;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>ServeUp Boost</h1>
-  <p>Grow your restaurant or café with modern online tools — fast, simple, and effective.</p>
-  <a class="btn" href="https://wa.me/919605129269" target="_blank">💬 Chat on WhatsApp</a>
-</header>
-
-<section>
-  <h2>Why Choose ServeUp Boost?</h2>
-  <div class="features">
-    <div class="feature">
-      <h3>⚡ Fast Setup</h3>
-      <p>Launch your digital menu + WhatsApp ordering within 24 hours.</p>
-    </div>
-    <div class="feature">
-      <h3>💬 WhatsApp Orders</h3>
-      <p>Let your customers place orders directly on WhatsApp — no app needed.</p>
-    </div>
-    <div class="feature">
-      <h3>📈 More Customers</h3>
-      <p>Reach more people online and boost repeat orders effortlessly.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Plans & Pricing</h2>
-  <div class="plans">
-    <div class="plan">
-      <h2>Starter</h2>
-      <p>Perfect for small cafés or takeaways</p>
-      <div class="price">₹499</div>
-      <ul>
-        <li>✅ WhatsApp Ordering Setup</li>
-        <li>✅ Digital Menu Link</li>
-        <li>✅ Basic Support</li>
-      </ul>
-      <a class="btn" href="https://wa.me/919605129269?text=Hi%2C+I+want+the+Starter+Plan" target="_blank">Get Starter Plan</a>
-    </div>
-
-    <div class="plan">
-      <h2>Growth</h2>
-      <p>For restaurants ready to grow online</p>
-      <div class="price">₹999</div>
-      <ul>
-        <li>✅ Website + WhatsApp Integration</li>
-        <li>✅ Customer Feedback Form</li>
-        <li>✅ Priority Setup (24 hrs)</li>
-      </ul>
-      <a class="btn" href="https://wa.me/919605129269?text=Hi%2C+I+want+the+Growth+Plan" target="_blank">Choose Growth Plan</a>
-    </div>
-
-    <div class="plan">
-      <h2>Pro</h2>
-      <p>For premium restaurants and chains</p>
-      <div class="price">₹1499</div>
-      <ul>
-        <li>✅ All Growth Features</li>
-        <li>✅ Instagram Setup Help</li>
-        <li>✅ 24/7 Support</li>
-      </ul>
-      <a class="btn" href="https://wa.me/919605129269?text=Hi%2C+I+want+the+Pro+Plan" target="_blank">Go Pro</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Request a Free Demo</h2>
-  <form class="demo-form" onsubmit="sendToWhatsApp(event)">
-    <label>Restaurant / Café Name</label>
-    <input type="text" id="name" placeholder="e.g., BrewHouse Café" required />
-
-    <label>Owner Name</label>
-    <input type="text" id="owner" placeholder="Your name" required />
-
-    <label>WhatsApp Number</label>
-    <input type="text" id="phone" placeholder="+91XXXXXXXXXX" required />
-
-    <label>Location</label>
-    <input type="text" id="location" placeholder="City / Town" required />
-
-    <label>Message / Menu Link</label>
-    <textarea id="message" placeholder="Share your menu link or any details..."></textarea>
-
-    <button type="submit" class="btn">🚀 Request Demo</button>
-  </form>
-</section>
-
-<footer>
-  <p>© 2025 ServeUp Boost — Empowering local restaurants & cafés.</p>
-  <a class="btn" href="https://wa.me/919605129269" target="_blank">💬 Chat Now</a>
-</footer>
-
-<script>
-function sendToWhatsApp(event) {
-  event.preventDefault();
-  const name = document.getElementById("name").value;
-  const owner = document.getElementById("owner").value;
-  const phone = document.getElementById("phone").value;
-  const location = document.getElementById("location").value;
-  const message = document.getElementById("message").value;
-
-  const text = `🍽️ *Demo Request - ServeUp Boost*%0A
-🏠 Restaurant: ${name}%0A👤 Owner: ${owner}%0A📞 WhatsApp: ${phone}%0A📍 Location: ${location}%0A📝 Message: ${message}`;
-
-  const url = `https://wa.me/919605129269?text=${encodeURIComponent(text)}`;
-  window.open(url, "_blank");
-}
-</script>
-
 </body>
 </html>
