@@ -1,112 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ServeUp Boost | Restaurant Growth System</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ServeUp Boost — Restaurant Growth Kit</title>
   <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
-    body {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-        url('https://images.unsplash.com/photo-1555992336-cbfca4b6d9b3?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      color: #f4f4f4;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root{
+      --gold:#ffb84d;
+      --gold-strong:#ff9f1a;
+      --muted:#cfc7bf;
+      --panel: rgba(8,8,8,0.6);
+      --glass: rgba(255,215,0,0.04);
     }
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      color: gold;
-      animation: fadeInDown 1s ease;
+
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    html,body{height:100%}
+    body{
+      min-height:100%;
+      color:#f4f3f2;
+      background:
+        linear-gradient(180deg, rgba(8,8,8,0.64), rgba(8,8,8,0.72)),
+        url('https://images.unsplash.com/photo-1555992336-cbfca4b6d9b3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:40px;
     }
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
+
+    .wrap{max-width:1100px;margin:30px auto;padding:18px;}
+
+    /* Header / Logo */
+    .top {
+      text-align:center;
+      padding:28px 10px 8px;
+      animation:fadeInDown .9s ease both;
     }
-    header p {
-      color: #ddd;
-      margin-top: 10px;
-      font-size: 1.2rem;
+    .logo {
+      display:inline-block;
+      width:160px;
+      height:auto;
+      border-radius:10px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:8px;
+      box-shadow:0 6px 22px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.02);
     }
-    section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 20px;
-      background: rgba(0,0,0,0.6);
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(255,215,0,0.2);
-      animation: fadeInUp 1.5s ease;
+    .hero-title{
+      margin-top:14px;
+      font-size:2.4rem;
+      color:var(--gold);
+      letter-spacing:1px;
+      text-shadow:0 6px 18px rgba(255,159,26,0.12);
     }
-    h2 {
-      color: gold;
-      text-align: center;
-      margin-bottom: 20px;
+    .hero-sub{
+      color:var(--muted);
+      margin-top:8px;
+      font-size:1.05rem;
     }
-    p {
-      text-align: center;
-      line-height: 1.6;
+
+    /* Panels */
+    .panel {
+      background:var(--panel);
+      border-radius:14px;
+      padding:22px;
+      margin:30px 0;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      border:1px solid rgba(255,215,0,0.07);
+      backdrop-filter: blur(6px);
+      animation:fadeInUp 1s ease both;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
+
+    h2 {color:var(--gold-strong);font-size:1.4rem;margin-bottom:10px;text-shadow:0 6px 20px rgba(255,159,26,0.08)}
+    p.lead{color:var(--muted);font-size:1rem;margin-top:6px}
+
+    /* Features grid */
+    .features {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
+    .feature {padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));}
+    .feature h3{color:var(--gold-strong);font-size:1.05rem;margin-bottom:6px}
+    .feature p{color:var(--muted);font-size:0.95rem}
+
+    /* Featured client */
+    .featured {display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .featured .thumb{flex:0 0 160px;height:110px;border-radius:10px;background:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=60') center/cover no-repeat;border:1px solid rgba(255,215,0,0.06)}
+    .featured .meta{flex:1}
+
+    .meta strong{display:block;color:var(--gold-strong);font-size:1.05rem}
+    .meta small{color:var(--muted);display:block;margin-top:6px}
+
+    /* Pricing */
+    .plans {display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:16px}
+    .plan {
+      padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,215,0,0.02), rgba(255,215,0,0.01));
+      border:1px solid rgba(255,215,0,0.06);
     }
-    th, td {
-      padding: 15px;
-      border-bottom: 1px solid rgba(255,215,0,0.3);
-      text-align: center;
-    }
-    th {
-      color: gold;
-      font-size: 1.2rem;
-    }
+    .plan h3{color:var(--gold);margin-bottom:8px}
+    .price {font-weight:700;color:#fff;font-size:1.3rem;margin:6px 0}
+    .plan ul{color:var(--muted);list-style:none;padding-left:0;margin-top:8px}
+    .plan li{padding:6px 0;font-size:0.95rem}
+
+    .cta {text-align:center;margin-top:18px}
     .btn {
-      display: inline-block;
-      background: gold;
-      color: black;
-      padding: 14px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
+      display:inline-block;padding:12px 26px;border-radius:30px;background:linear-gradient(90deg,var(--gold),var(--gold-strong));
+      color:#111;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(255,159,26,0.12);transition:transform .18s ease,box-shadow .18s ease;
     }
-    .btn:hover {
-      background: #e5c100;
-      transform: scale(1.05);
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #aaa;
-      font-size: 0.9rem;
-    }
-    @keyframes fadeInUp {
-      from {opacity:0; transform:translateY(30px);}
-      to {opacity:1; transform:translateY(0);}
-    }
-    @keyframes fadeInDown {
-      from {opacity:0; transform:translateY(-30px);}
-      to {opacity:1; transform:translateY(0);}
-    }
-    @media (max-width:600px){
-      header h1 {font-size:2.2rem;}
-      section {margin:30px 10px;}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(255,159,26,0.18)}
+
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    /* Animations */
+    @keyframes fadeInUp {from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes fadeInDown {from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+
+    /* Responsive tweaks */
+    @media (max-width:720px){
+      .hero-title{font-size:1.8rem}
+      .wrap{padding:12px}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🍽️ ServeUp Boost</h1>
-    <p>Grow Your Restaurant Online — Instantly!</p>
-  </header>
+  <div class="wrap">
+    <div class="top">
+      <!-- Logo: ensure your file Serverup_logo.png is next to this HTML or update path -->
+      <img class="logo" src="Serverup_logo.png" alt="ServeUp Boost logo" onerror="this.style.display='none'">
+      <div class="hero-title">ServeUp Boost</div>
+      <div class="hero-sub">Grow your restaurant with a curated website + WhatsApp system — fast and simple.</div>
+    </div>
 
-  <section id="about">
-    <h2>Why Choose ServeUp Boost?</h2>
-    <p>ServeUp Boost helps cafés and restaurants get more orders, more reviews, and more returning customers — all with an automated website and WhatsApp system that runs 24/7.</p>
-  </section>
+    <section class="panel" id="about">
+      <h2>Why ServeUp Boost?</h2>
+      <p class="lead">We build a sleek promo page + WhatsApp ordering flow that helps local cafés and restaurants get more orders, bookings and repeat customers — without paid ads or complex tech.</p>
 
-  <section id="featured">
-    <h2>🏆 Featured Client</h2>
-    <p><strong>Cardamom Kerala Restaurant</strong><br>
-      “From walk-ins to online orders — ServeUp Boost helped this restaurant double their weekend traffic in just 10 days.”<br>
+      <div class="features" style="margin-top:18px;">
+        <div class="feature">
+          <h3>⚡ Rapid Setup</h3>
+          <p>Go live within 24–48 hours with a working menu and WhatsApp ordering.</p>
+        </div>
+        <div class="feature">
+          <h3>💬 WhatsApp First</h3>
+          <p>Customers place orders directly via WhatsApp — no extra apps required.</p>
+        </div>
+        <div class="feature">
+          <h3>📈 Revenue Focused</h3>
+          <p>Campaigns designed to convert visitors into diners and repeat customers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="featured">
+      <h2>🏆 Featured Client</h2>
+      <div class="featured">
+        <div class="thumb" aria-hidden="true"></div>
+        <div class="meta">
+          <strong>Cardamom Kerala Restaurant</strong>
+          <small>“From walk-ins to online orders — ServeUp Boost helped Cardamom Kerala Restaurant double their weekend traffic in just 10 days.”</small>
+          <small style="margin-top:8px; display:block">Condolium, Goa · Authentic Kerala food</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="pricing">
+      <h2>💰 Pricing Plans</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Starter</h3>
+          <div class="price">₹ 499</div>
+          <ul>
+            <li>One-page landing + WhatsApp connect</li>
+            <li>Digital menu link</li>
+            <li>Basic setup support</li>
+          </ul>
+        </div>
+
+        <div class="plan">
+          <h3>Growth</h3>
+          <div class="price">₹ 799</div>
+          <ul>
+            <li>Menu page + gallery</li>
+            <li>Customer feedback form</li>
+            <li>Priority setup (24 hrs)</li>
+          </ul>
+        </div>
+
+        <div class="plan">
+          <h3>Pro</h3>
+          <div class="price">₹ 1,200</div>
+          <ul>
+            <li>All Growth features</li>
+            <li>Booking & basic analytics</li>
+            <li>24/7 priority support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta">
+        <p style="color:var(--muted);margin-bottom:12px">Request a demo — preview your page, pay only if you like it.</p>
+        <!-- Replace 91XXXXXXXXXX with your full phone number (country code + digits) -->
+        <a class="btn" href="https://wa.me/91XXXXXXXXXX?text=🍽️%20Demo%20Request%20-%20ServeUp%20Boost%0A🏠%20Restaurant:%20Cardamom%20Kerala%20Restaurant%20%0A👤%20Owner:%20Jojest%0A📞%20WhatsApp:%20+91%2078754%2050365%0A📍%20Location:%20Condolium,%20Goa%0A📝%20Message:%20Good%20Kerala%20food" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 ServeUp Boost — Built for local restaurants & cafés
+    </footer>
+  </div>
+
+  <!-- Optional small script: fade in panels as they come into view -->
+  <script>
+    (function(){
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.style.opacity = 1;
+        });
+      }, {threshold:0.12});
+
+      document.querySelectorAll('.panel').forEach(s => {
+        s.style.opacity = 0;
+        s.style.transform = 'translateY(14px)';
+        s.style.transition = 'opacity .7s ease, transform .7s ease';
+        observer.observe(s);
+        s.addEventListener('transitionend', () => { s.style.transform = ''; });
+      });
+    })();
+  </script>
+</body>
+</html>      “From walk-ins to online orders — ServeUp Boost helped this restaurant double their weekend traffic in just 10 days.”<br>
       📍 Condolium, Goa · 🍛 Authentic Kerala food
     </p>
   </section>
