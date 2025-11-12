@@ -12,26 +12,19 @@ body {
   padding: 50px 20px;
   background: #111;
 }
-.logo {
-  width: 160px;
-  max-width: 50%;
+..logo {
+  width: 180px;
+  max-width: 60%;
   height: auto;
-  margin: 20px auto 15px;
-  display: block;
+  margin-bottom: 15px;
   border-radius: 12px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 180, 0, 0.2); /* Soft glow */
 }
 
 .logo:hover {
   transform: scale(1.05);
-}
-
-/* Mobile optimization */
-@media (max-width: 600px) {
-  .logo {
-    width: 120px;
-    max-width: 70%;
-  }
+  box-shadow: 0 0 35px rgba(255, 180, 0, 0.4); /* Brighter glow on hover */
 }
 h1 {
   color: #ffb84d;
@@ -141,6 +134,25 @@ h2 {
   border-radius: 6px;
   background: #1f1f1f;
   color: #fff;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+section {
+  margin-bottom: 40px;
 }
 
 footer {
