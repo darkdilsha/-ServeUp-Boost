@@ -92,7 +92,16 @@
       <button type="submit" class="btn">Request Demo</button>
     </form>
   </section>
-
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section, .pricing, .client, .demo");
+    sections.forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.add("fade-in");
+      }, i * 200); // delay for each section
+    });
+  });
+</script>
   <footer>
     <p>© 2025 ServeUp Boost — Empowering local restaurants & cafés.</p>
     <button class="btn">Chat on WhatsApp</button>
